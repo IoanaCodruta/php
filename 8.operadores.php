@@ -1,11 +1,11 @@
 <?php 
 
-/* Operadores Aritm茅ticos:
+/* Operadores Aritm閠icos:
 +	Suma
 -	Resta
-*	Multiplicaci贸n
-/	Divisi贸n
-%	Resto
+*	Multiplicaci髇
+/	Divisi髇
+%	Resto de la divisi髇 10/6 nos "sobran" 4
 **	Exponente 10^6
 -- */
 // $numero1 = 10;
@@ -14,7 +14,7 @@
 // echo gettype($resultado);
 // echo $resultado;
 
-/* Operadores de Asignaci贸n:
+/* Operadores de Asignaci髇:
 =
 +=
 -=
@@ -24,25 +24,28 @@
 $numero = 10;
 // $numeros = 13;
 $numero5 = 5;
-// $numero = $numero + $numero5;
+// $numero = $numero + $numero5; Asignaci髇 de Suma
 $numero += $numero5;
 // $numeros += $numero5; //$numeros = $numeros + $numero5;
 //echo $numero .'<br>'; //15
-// $numero = $numero + 7;
-$numero += 7;
+// echo $numeros .'<br>'; //15
+// $numero = $numero - 7; Asignaci髇 de Resta
+$numero -= 7;
 //echo $numero .'<br>'; //22
-// $numero = $numero * 3;
+// $numero = $numero * 3; Asignaci髇 de Multiplicaci髇
 $numero *= 3;
 //echo $numero .'<br>'; //66
-// $numero = $numero % 3;
+// $numero = $numero / 2; Asignaci髇 de Divisi髇
+//$numero /= 2;
+// $numero = $numero % 3; Asignaci髇 de Resto
 $numero %= 3;
-//echo $numero .'<br>'; //0
+// echo $numero .'<br>'; //0
 $numero=10;
-// $numero = $numero ** 3; Exponente 10*10*10
+// $numero = $numero ** 3; Asignaci髇 de Exponente 10*10*10
 $numero **= 3;
 //echo $numero; //1000
 
-/* Operadores de Comparaci贸n:
+/* Operadores de Comparaci髇:
 ==
 ===
 !=, <>
@@ -57,22 +60,35 @@ $stringNumero = '10'; // String
 $numero = 10; //Integer
 $numSpaceship = 13;
 $variable = 'true';
-//echo $stringNumero == $numero; //1 True
-//echo $stringNumero === $numero; // vacio False
-//echo $numero < $numSpaceship; //1 True 
-//echo $numero >= $stringNumero; //1 True 
-//echo $numero<=>$numSpaceship; 
-//< -1 
+// echo $stringNumero == $numero; //1 True
+// echo $stringNumero === $numero; // En PHP es vacio el False no "0"
+// echo $numero < $numSpaceship; //1 True 
+// echo $numero >= $stringNumero; //1 True 
 
-//echo 'Igual valor?: '.   ($stringNumero==$numero) . '<br>'; //true
-//echo 'Id茅nticos?: ' .  ($stringNumero===$numero); //false
+// echo 'Igual valor?: '.   ($stringNumero==$numero) . '<br>'; //true
+// echo 'Id閚ticos?: ' .  ($stringNumero===$numero); //false
 
 // if ($stringNumero===$numero) {
-// 	echo 'Id茅nticos valor y tipo de $stringNumero y  $numero';
+// 	echo 'Id閚ticos valor y tipo de $stringNumero y  $numero';
 // }
 // else{
-//     echo 'stringNumero y numero no son id茅nticos';
+//     echo '$stringNumero y $numero no son id閚ticos';
 // }
+
+
+
+// echo $numero<=>$numSpaceship; 
+//< -1 
+###Ejemplo de spaceship <=>
+$numeros = [3, 1, 2, 3];
+// var_dump ($numeros);
+// echo "<br>";
+//Ordena valores del array comparando <=>
+usort($numeros, function($a, $b) {
+  return $a <=> $b;
+});
+// var_dump ($numeros); //Tendremos $numeros = [1, 2, 3];
+
 
 /* Operadores de Incremento / Decremento:
 ++$x
@@ -81,69 +97,97 @@ $x++
 $x--
 -- */
 
-$numero = 10;
-//echo $numero .  '<br>'; //10
+// $numero = 10;
+// echo $numero .  '<br>'; //10
 //$numero = $numero + 1;
 //$numero += 1;
-// echo 'Valor del $numero++= ' . $numero++ . '<br>';
+//PostIncremento
+// echo 'Valor del $numero++= ' . $numero++ . '<br>'; //10
 // echo $numero . '<br>';
+//PreIncremento
 // echo 'Valor del ++$numero= ' . ++$numero . '<br>';
 // echo 'Valor final de $numero= ' . $numero;
 # La diferencia es lo que muestra y lo que GUARDA de VALOR
 // echo $numero--;
 // echo "<br />";
 // echo $numero;
+// echo "<br />";
 // echo --$numero;
 // echo "<br />";
 // echo $numero;
 
 
-/* Operadores de Strings - Cadenas de texto:
-.
-.=
--- */
-$texto = 'Cadena de Texto';
-$texto2 = ' Una segunda Cadena de Texto';
-//echo $texto . $texto2 . "<br>";
-$texto .= $texto2;
-// echo $texto;
+/* 
+
+Operadores de Strings - Cadenas de texto:
+. concatenaci髇
+.= concatenaci髇 asignaci髇
+
+*/
+// $texto = 'Cadena de Texto';
+// echo $texto . "<br>";
+// $texto2 = ' Una segunda Cadena de Texto';
+// echo $texto . $texto2 . "<br>"; 
+// $texto .= $texto2; 
+// echo $texto. "<br>";
 // echo $texto2;
 
 // EJEMPLO NOMBRES APELLIDOS
-$nombre = 'Marc';
-$apellidos = 'Esteve Garcia';
-//$nombreCompleto = $nombre . " " . $apellidos;
-$nombre .= " " . $apellidos;
-//echo $nombreCompleto . "<br>";
+// $nombre = 'Marc';
+// $apellidos = 'Esteve Garcia';
+// $nombreCompleto = $nombre . " " . $apellidos;
+// $nombreCompleto = $nombre .= " " . $apellidos; //Cuidado por que $nombre cambia de valor!!!
+// echo $nombreCompleto . "<br>";
+// echo $nombre . " como estamos";
 
-
-/* Operadores L贸gicos:
-and, &&
+######################
+/* Operadores L覩ICOS:
+and, && 
 or, ||
 xor
-!
--- */
+! es el NOT l骻ico
+
+*/
+
 $numero = 21;
 
-// if ($numero >= 10 or $numero > 20 and $numero > 1) {
-// 	echo "Se cumple toda la condici贸n";
+// if ($numero >= 10 xor $numero > 20 xor $numero > 1) {
+// 	echo "Se cumple toda la condici髇";
 // }
 // else{
-//     echo "No se cumple la condici贸n";
+//     echo "No se cumple la condici髇";
 // }
 
-$bool= false;
+//Ejemplo AND && y ! NOT l骻ico
+// $esta_autenticado = true;
+// $es_mayor_de_edad = false;
+
+// if ($esta_autenticado && $es_mayor_de_edad) {
+//   echo "Bienvenido a la secci髇 restringida.";
+// } elseif (!$esta_autenticado && $es_mayor_de_edad) {
+//   echo "Debes estar autenticado para acceder a esta secci髇.";
+// } elseif ($esta_autenticado && !$es_mayor_de_edad) {
+//   echo "Debes ser mayor de edad para acceder a esta secci髇.";
+// } else {
+//   echo "Debes estar autenticado y ser mayor de edad para acceder a esta secci髇.";
+// }
+
+//NOT l骻ico !!!
+// $bool=false;
 // if (!$bool) { //NOT FALSE = TRUE
 // 	echo '!$bool se cumple1' . $bool;
 // }
 // else{
-//     echo '!$bool no se cumple2';
+//     echo '!$bool no se cumple2' . $bool;
 // }
 
-$array1=['a' =>'Hola', 'b'=> 'Hello'];
-$array2=['c' =>'Adi贸s', 'd' =>'Adeu'];
 
-#NUEVA FUNCI脫N PRINT_R() muestra en pantalla la suma y en este caso, la suma es una fusi贸n de las claves y valores de ambas matrices
+###Operadores array
+
+$array1=['a' =>'Hola', 'b'=> 'Hello'];
+$array2=['c' =>'Adi髎', 'd' =>'Adeu'];
+
+#NUEVA FUNCI覰 print_r() muestra en pantalla la suma y en este caso, la suma es una fusi髇 de las claves y valores de ambas matrices
 $fusionArrays=$array1 + $array2;
 // print_r($fusionArrays); 
 // echo '<br>';
@@ -152,25 +196,26 @@ $fusionArrays=$array1 + $array2;
 
 $x = array("a" => "red", "b" => "green");  
 $y = array("c" => "blue", "d" => "yellow");
-//print_r($x + $y); 
+// print_r($x + $y); 
 
 $x=array( "a" => "10", "b" => "green");  
-$y=array("b" => "green","a" => "10" );  
-//var_dump($x == $y); //BOOL(TRUE)
-//var_dump($x === $y); //BOOL(FALSE)
+$y=array("b" => "green","a" => 10 );  
+var_dump($x == $y); //BOOL(TRUE)
+var_dump($x === $y); //BOOL(FALSE) el orden!!! tambi閚
 
-#NUEVA FUNCI脫N EMPTY() vacia la variable?
+#NUEVA FUNCI覰 EMPTY() vacia la variable?
 // Si la "variable $user" esta vacia empty($user) = TRUE, asignamos a la variable $status = "anonymous"
-// echo $status = (empty($user)) ? "an贸nimo" : "sesi贸n iniciada";
+// echo $status = (empty($user)) ? "an髇imo" : "sesi髇 iniciada";
 // echo "<br>";
 
 // $user = "John Doe";
 // $user=NULL;
 // if empty($user) = FALSE, set $status = "logged in"
-//OPERADOR TERNARIO
-//echo $status = (empty($user)) ? "an贸nimo" : 'sesi贸n iniciada y $user no esta vacia y es igual a '. $user;
 
-//OPERADOR FUSI脫N NULA
+//OPERADOR TERNARIO
+//echo $status = (empty($user)) ? "an髇imo" : 'sesi髇 iniciada y $user no esta vacia y es igual a '. $user;
+
+//OPERADOR FUSI覰 NULA
 // variable $color es "rojo" if $color does not exist or is null
 // $color="blue";
 //echo $color = $color ?? "rojo";
