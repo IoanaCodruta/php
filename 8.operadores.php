@@ -200,24 +200,33 @@ $y = array("c" => "blue", "d" => "yellow");
 
 $x=array( "a" => "10", "b" => "green");  
 $y=array("b" => "green","a" => 10 );  
-var_dump($x == $y); //BOOL(TRUE)
-var_dump($x === $y); //BOOL(FALSE) el orden!!! también
-
-#NUEVA FUNCIÓN EMPTY() vacia la variable?
-// Si la "variable $user" esta vacia empty($user) = TRUE, asignamos a la variable $status = "anonymous"
-// echo $status = (empty($user)) ? "anónimo" : "sesión iniciada";
-// echo "<br>";
-
-// $user = "John Doe";
-// $user=NULL;
-// if empty($user) = FALSE, set $status = "logged in"
+// var_dump($x == $y); //BOOL(TRUE)
+// var_dump($x === $y); //BOOL(FALSE) el orden!!! también
 
 //OPERADOR TERNARIO
-//echo $status = (empty($user)) ? "anónimo" : 'sesión iniciada y $user no esta vacia y es igual a '. $user;
+
+//$x = expr1 ? expr2 : expr3
+//Equivale al if else:
+  // if (expr1) {
+  //   $x = expr2;
+  // } else {
+  //   $x = expr3;
+  // }
+
+#NUEVA FUNCIÓN empty() vacia la variable? equivale al operador lógico NOT !() == empty()
+
+// Si la "variable $user" esta vacia empty($user) = TRUE, asignamos a la variable $status = "anónimo"
+// echo $status = (empty($user)) ? "anónimo" : "sesión iniciada";
+// echo "<br>";
+// $user = "John Doe";
+// $user=NULL; //Quitamos el valor para que ahora sea "anónimo"
+// if empty($user) = FALSE, asignamos a $status = "sesión iniciada"
+// echo $status = (empty($user)) ? "anónimo" : 'sesión iniciada y $user no esta vacia y es igual a '. $user;
 
 //OPERADOR FUSIÓN NULA
-// variable $color es "rojo" if $color does not exist or is null
-// $color="blue";
-//echo $color = $color ?? "rojo";
+// variable $colorElegido es "rojo" si la variable $colorElegido ni existe o es nula, sinó asignamos el $colorElegido por la visita a la web
+
+// $colorElegido="Azul";
+// echo $variableColor = $colorElegido ?? "Rojo o color por defecto";
 
 ?>
