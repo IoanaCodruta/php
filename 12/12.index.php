@@ -10,7 +10,9 @@ if (isset($_POST['submit'])) {
 
 	if (!empty($nombre)) {
 		$nombre = trim($nombre);
-		$nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
+		$nombre = htmlspecialchars($nombre);
+		$nombre = stripslashes($nombre);
+		//nombre = filter_var($nombre, FILTER_SANITIZE_STRING);
 	} else {
 		$errores .= 'Por favor escribe un nombre <br />';
 	}
