@@ -2,44 +2,7 @@
 <html>
 <head>
   <title>Formular de Contact</title>
-  <style>
-    /* Stilizare formular */
-    form {
-      width: 400px;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: blueviolet;
-    }
-
-    .error {
-      color: red;
-      margin-bottom: 10px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="exercitiu-trimitere.css">
 </head>
 <body>
   <h1>Contacteaza-ne</h1>
@@ -51,7 +14,7 @@
     <input type="email" id="email" name="email" required>
 
     <label for="telefon">Telefon:</label>
-    <input type="tel" id="telefon" name="telefon" required>
+    <input type="text" id="telefon" name="telefon" pattern="[0-9]+" required>
 
     <label for="mesaje">Mesaje:</label>
     <textarea id="mesaje" name="mesaje" rows="4" required></textarea>
