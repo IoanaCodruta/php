@@ -22,7 +22,9 @@
     <input type="checkbox" id="termeni" name="termeni" required>
     <label for="termeni">Am citit si accept termenii si conditiile.</label>
 
-    <input type="submit" value="Trimite">
-  </form>
+    <div class="button-row">
+      <input type="submit" value="Trimite">
+      <button onclick="location.href='inregistrare.php'">Inregistrare</button>
+    </div>
 </body>
 </html>
