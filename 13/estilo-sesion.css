@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.mensaje-correcto {
+    color: green;
+    font-weight: bold;
+}
+
+.mensaje-incorrecto {
+    color: red;
+    font-weight: bold;
+}
+
+.mensaje-error {
+    color: #FF8C00;
+    font-weight: bold;
+}
