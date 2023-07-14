@@ -1,0 +1,9 @@
+Ejemplo Predicados DISTINCT
+Nombre de la empresa que si han hecho pedidos
+
+SELECT DISTINCT EMPRESA FROM CLIENTES INNER JOIN PEDIDOS ON CLIENTES.CÓDIGOCLIENTE=PEDIDOS.CÓDIGOCLIENTE
+
+DISTINCTROW - Mirar todo el registro -> No habrá dos filas iguales
+(Insertado en la tabla PRODUCTOS un registro idéntico, ejmplo AR01)
+
+SELECT DISTINCTROW * FROM PRODUCTOS WHERE SECCIÓN='FERRETERÍA'

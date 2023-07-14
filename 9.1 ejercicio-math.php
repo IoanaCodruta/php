@@ -1,6 +1,6 @@
 <?php
     $num1 = 5.6;
-    $num2 = -2.8;
+    $num2 = -4.1;
 
     $ceil_num1 = ceil($num1);
     $ceil_num2 = ceil($num2);

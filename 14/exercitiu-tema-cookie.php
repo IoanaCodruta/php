@@ -1,55 +1,58 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Formulario de Estilos</title>
+    <title>Formular personalizare stil text</title>
+    <style>
+        /* Stilurile implicite */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="color"], input[type="number"] {
+            width: 100px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Formulario de Estilos</h1>
-
-    <form action="ejercicio-contenido-cookie.php" method="post">
-        <label for="colorParrafo">Color del Párrafo:</label>
-        <select name="colorParrafo" id="colorParrafo">
-            <option value="black">Negro</option>
-            <option value="red">Rojo</option>
-            <option value="blue">Azul</option>
-            <option value="green">Verde</option>
-        </select>
-
-        <br>
-
-        <label for="colorFondo">Color de Fondo:</label>
-        <select name="colorFondo" id="colorFondo">
-            <option value="white">Blanco</option>
-            <option value="lightgray">Gris Claro</option>
-            <option value="lightblue">Azul Claro</option>
-            <option value="lightgreen">Verde Claro</option>
-        </select>
-
-        <br>
-
-        <label for="tamanioLetra">Tamaño de párrafos:</label>
-        <select name="tamanioLetra" id="tamanioLetra">
-            <option value="12px">Pequeño</option>
-            <option value="16px">Mediano</option>
-            <option value="26px">Grande</option>
-            <option value="32px">Muy Grande</option>
-        </select>
-        <br>
-
-        <label for="tamanyTitol">Tamaño de titulares:</label>
-        <select name="tamanyTitol" id="tamanyTitol">
-            <option value="26px">Pequeño</option>
-            <option value="32px">Normal</option>
-            <option value="48px">Grande</option>
-        </select>
-
-        <br>
-
-        <input type="submit" value="Aplicar Estilos">
+    <form method="post" action="rezultat.php">
+        <div class="form-group">
+            <label for="text-color">Culoarea textului (paragrafe, h1):</label>
+            <input type="color" id="text-color" name="text-color" value="<?php echo $_COOKIE['textColor'] ?? '#000000'; ?>">
+        </div>
+        <div class="form-group">
+            <label for="background-color">Culoarea fundalului:</label>
+            <input type="color" id="background-color" name="background-color" value="<?php echo $_COOKIE['backgroundColor'] ?? '#ffffff'; ?>">
+        </div>
+        <div class="form-group">
+            <label for="font-size">Dimensiunea literelor (paragrafe):</label>
+            <input type="number" id="font-size" name="font-size" min="1" max="100" value="<?php echo $_COOKIE['fontSize'] ?? '14'; ?>">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Aplica">
+        </div>
     </form>
 </body>
 </html>
